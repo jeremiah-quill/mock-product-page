@@ -36,25 +36,28 @@
 	<body>
 		<div class="backdrop"></div>
 
-		<div class="sidebar">
-			<button class="close-menu">
-				<img
-					class="close-menu"
-					src="images/icon-close.svg"
-					alt="close menu button"
-				/>
-			</button>
-			<ul>
-				<li>Collections</li>
-				<li>Men</li>
-				<li>Women</li>
-				<li>About</li>
-				<li>Contact</li>
-			</ul>
-		</div>
 
-		<header>
-			<nav class="header-nav">
+
+    <div class="cart">
+      <header class="cart-header">
+        <h1>Cart</h1>
+        <button class="close-cart">
+          <img
+            class="close-cart"
+            src="images/icon-close.svg"
+            alt="close cart button"
+          />
+        </button>
+      </header>
+      <div class="cart-body">
+        <div class="cart-item-count"></div>
+        <div class="cart-items">
+        </div>
+      </div>
+    </div>
+
+		<header class="main-header">
+      <nav class="header-nav">
 				<img
 					class="hamburger"
 					src="images/icon-menu.svg"
@@ -62,6 +65,25 @@
 				/>
 				<h1 class="black-logo">sneakers</h1>
 			</nav>
+
+
+      <div class="sidebar">
+        <button class="close-menu">
+          <img
+            class="close-menu"
+            src="images/icon-close.svg"
+            alt="close menu button"
+          />
+        </button>
+        <ul>
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+			
 			<div class="nav-icons">
 				<div class="cart-icon-group">
 					<img class="cart-icon" src="images/icon-cart.svg" alt="cart icon" />
@@ -73,23 +95,7 @@
 
 		<main>
 			<div class="slideshow">
-				<div class="cart">
-					<header class="cart-header">
-						<h1>Cart</h1>
-						<button class="close-cart">
-							<img
-								class="close-cart"
-								src="images/icon-close.svg"
-								alt="close cart button"
-							/>
-						</button>
-					</header>
-					<div class="cart-body">
-						<div class="cart-item-count"></div>
-						<div class="cart-items">
-						</div>
-					</div>
-				</div>
+
 				<img
 					class="showcase-img"
 					src="images/image-product-1.jpg"
@@ -128,7 +134,8 @@
 					<div class="discount">50%</div>
 					<div class="original-price">$250.00</div>
 				</div>
-
+        
+        <div class="quantity-cart-button-group">
 				<div class="quantity-picker">
 					<button class="minus">
 						<img class="minus" src="images/icon-minus.svg" alt="minus icon" />
@@ -142,6 +149,8 @@
 				<button class="add-to-cart btn">
 					<img src="images/icon-cart.svg" alt="cart icon" />Add to cart
 				</button>
+      </div>
+
 			</div>
 		</main>
 

@@ -136,7 +136,7 @@ const renderCartList = (cart) => {
         let itemEl = document.createElement('div')
         itemEl.innerHTML =  `							
         
-    <div class="cart-item">
+    <div class="cart-item" data-item-id="${item.id}">
         <img
             class="cart-item-thumbnail"
             src="${item.thumbnailUrl}"
@@ -169,6 +169,23 @@ const renderCartList = (cart) => {
 
     })
 }
+
+
+document.querySelector('body').addEventListener('click', (e) => {
+    if(e.target.parentNode.classList.contains('add-item')) {
+        userCart.addItem(userCart.cartList.find((item => item.id === parseInt(e.target.parentNode.parentNode.parentNode.getAttribute('data-item-id')))), 1)
+        renderCartList(userCart.cartList)
+        renderCartQuant(userCart.cartList.reduce((total, item) => item.quantity + total, 0))
+
+    }
+    if(e.target.parentNode.classList.contains('remove-item')) {
+        userCart.removeItem(userCart.cartList.find((item => item.id === parseInt(e.target.parentNode.parentNode.parentNode.getAttribute('data-item-id')))).id)
+        renderCartList(userCart.cartList)
+        renderCartQuant(userCart.cartList.reduce((total, item) => item.quantity + total, 0))
+
+    }
+})
+
 
 renderCartList(userCart.cartList)
 
