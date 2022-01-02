@@ -91,7 +91,7 @@ minusButton.addEventListener("click", () => {
 // create new cart
 let userCart = new Cart();
 // create test product to work with
-let testProduct = new Product('test-product', 1, 10.99, .1);
+let testProduct = new Product('test-product', 1, 10.99, .1, 'images/image-product-1-thumbnail.jpg');
 
 
 let addToCart = document.querySelector(".add-to-cart");
@@ -129,6 +129,9 @@ previous.addEventListener('click', () => {
 })
 
 const renderCartList = (cart) => {
+    let cartListEl = document.querySelector('.cart-items');
+    cartListEl.innerHTML = '';
+
     cart.forEach(item => {
         let itemEl = document.createElement('div')
         itemEl.innerHTML =  `							
@@ -136,7 +139,7 @@ const renderCartList = (cart) => {
     <div class="cart-item">
         <img
             class="cart-item-thumbnail"
-            src="images/image-product-1-thumbnail.jpg"
+            src="${item.thumbnailUrl}"
             alt="thumbnail image of selected product"
         />
         <div class="cart-item-details truncate">
@@ -161,7 +164,7 @@ const renderCartList = (cart) => {
         </div>
     </div>`
 
-        document.querySelector('.cart-items').appendChild(itemEl)
+        cartListEl.appendChild(itemEl)
 
 
     })

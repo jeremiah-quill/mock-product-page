@@ -15,40 +15,39 @@ class Counter {
     }
 }
 
-// class Cart extends Counter {
-// 	constructor(cartList = []){
-// 		super();
-// 		this.cartList = cartList;
-// 	}
-// }
 
 class Cart {
-	// {
-	// 	name: 'name',
-	// 	id: 'id',
-	// 	price: 100.00,
-	// 	discount: .1,
-	//  quantity: 1,
-	// }
-
 	constructor(cartList = []) {
 		this.cartList = cartList
 	}
+	// TODO: connect and call when using button in cart view
 	addItem(item, quantity) {
-		this.cartList.push({...item, quantity: quantity})
+		// if the item is already in the user's cart, only update the quantity, else add item to array
+		if(this.cartList.find(cartItem => cartItem.id === item.id)) {
+			this.cartList.find(cartItem => cartItem.id === item.id).quantity += quantity
+		} else {
+			this.cartList.push({...item, quantity: quantity})
+		}
 	}
+	// TODO: connect and call when using button in cart view
 	removeItem(itemId) {
-		return this.cartList.filter(item => item.id !== itemId);
+		if(this.cartList.find(cartItem => cartItem.id === itemId).length > 1) {
+			this.cartList.find(cartItem => cartItem.id === itemId).quantity -= 1;
+		} else {
+			return this.cartList = this.cartList.filter(item => item.id !== itemId);
+
+		}
 	}
 
 }
 
 class Product {
-	constructor(name, id, price, discount) {
+	constructor(name, id, price, discount, thumbnailUrl) {
 		this.name = name;
 		this.id = id;
 		this.price = price;
 		this.discount = discount;
+		this.thumbnailUrl = thumbnailUrl;
 	}
 }
 
