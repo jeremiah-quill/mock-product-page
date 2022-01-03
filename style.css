@@ -350,6 +350,7 @@ header {
 	background: white;
 	border-radius: 0.5em;
 	display: none;
+
 }
 
 .active-cart {
@@ -357,10 +358,6 @@ header {
 }
 
 .cart-body {
-	/* padding: 1em; */
-	/* display: flex;
-    justify-content: center;
-    align-items: center; */
 	height: 250px;
 	padding: 1.5em;
 }
@@ -390,6 +387,11 @@ header {
 	display: flex;
 	align-items: center;
 	width: 100%;
+}
+
+.cart-item-quantity-container {
+    color: var(--primary);
+    font-weight: bold;
 }
 
 .cart-quantity-buttons {
@@ -428,7 +430,7 @@ header {
 	text-overflow: ellipsis;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
 	/* nav */
 	.close-menu {
 		display: none;
@@ -439,7 +441,6 @@ header {
         position: fixed;
 		left: 0;
 		right: 0;
-		/* align-items: center; */
         border-bottom: 1px solid hsl(220, 14%, 75%);
     }
 
@@ -469,21 +470,15 @@ header {
         margin-right: 2em;
     }
     
-
 	body,
 	html {
 		height: 100vh;
 	}
 	main {
-		/* margin-top:  */
 		flex-direction: row;
 		align-items: center;
 		height: 100%;
-		padding: 0 3em;
-	}
-
-	.main-header {
-
+		padding: 0 1.5em;
 	}
 
 	.showcase-img {
@@ -495,12 +490,9 @@ header {
 		flex: 0 1 50%;
 	}
 
-	.slideshow {
-		margin-right: 5em;
-	}
+
 	.cart {
-		right: 10px;
-		/* left: 0%; */
+		right: 6em;
 		transform: translateX(0%);
 		width: auto;
         left: inherit;
@@ -511,22 +503,15 @@ header {
         margin-right: 75px;
     }
 
-    .cart-item-quantity-container {
-        color: var(--primary);
-        font-weight: bold;
-    }
 
 	.product-name {
-		font-size: 3em;
+		font-size: 1.5em;
 	}
 
 	.quantity-picker {
-		width: 150px;
-		/* display: inline-flex; */
-		/* margin: 0px; */
+		width: 250px;
 	}
 	.add-to-cart {
-		/* display: inline-block; */
 		width: auto;
 		margin-top: 0px;
 		width: 100%;
@@ -537,10 +522,23 @@ header {
 		flex-direction: row;
 		margin-top: 2em;
 	}
+}
 
-    .cart-body {
-        /* padding: 1.5em 10em; */
-    }
+@media screen and (min-width: 1000px) {
+	main {
+		/* flex-direction: row;
+		align-items: center;
+		height: 100%; */
+		padding: 0 3em;
+	}
+
+    .slideshow {
+		margin-right: 5em;
+	}
+
+    .product-name {
+		font-size: 3em;
+	}
 }
 
 @media screen and (min-width: 1350px) {
